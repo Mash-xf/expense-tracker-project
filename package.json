@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Mash-xf.github.io/expense-tracker-project",
+  "homepage": "https://mash-xf.github.io/expense-tracker-project/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
