@@ -1,9 +1,9 @@
 {
-  "name": "expense-tracker",
+  "name": "expense-tracker-project",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Mash-xf.github.io/Expense-tracker",
+  "homepage": "https://Mash-xf.github.io/expense-tracker-project",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
