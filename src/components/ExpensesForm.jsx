@@ -4,17 +4,17 @@ import { useNavigate } from "react-router";
 
 
 
-function ExpensesForm(   { expenses,
+function ExpensesForm({ expenses,
     setExpenses,
     income,
     setIncome, }) {
-        let navigate = useNavigate();
-        const [expense, setExpense] = useState({
+    let navigate = useNavigate();
+    const [expense, setExpense] = useState({
         id: '',
         title: '',
         amount: 0,
         category: '',
-        date: new Date()
+        createdAt: new Date()
     })
 
     const handleChange = (e) => {
@@ -35,10 +35,10 @@ function ExpensesForm(   { expenses,
             title: expense.title,
             amount: parseFloat(expense.amount),
             category: expense.category,
-            date: new Date()
+            createdAt: new Date()
         }
         try {
-            const response = await fetch("http://localhost:3500/expenses", {
+            const response = await fetch("https://6a08073efa9b27c848fa8a5f.mockapi.io/api/et/expenses", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -52,14 +52,14 @@ function ExpensesForm(   { expenses,
 
             const data = await response.json();
 
-setExpenses(prev=> [...prev, data])
-navigate('/')
+            setExpenses(prev => [...prev, data])
+            navigate('/')
             setExpense({
                 id: '',
                 title: '',
                 amount: 0,
                 category: '',
-                date: new Date()
+                createdAt: new Date()
             })
         } catch (error) {
             console.error("Error adding transaction:", error);
@@ -68,21 +68,21 @@ navigate('/')
     };
     return (
         <div className='expense-form'>
-                            <Show when="signed-in">
-    
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="title">Title</label>
-                <input type="text" name="title" placeholder='Title' value={expense.title} onChange={handleChange} />
-                <label htmlFor="amount">Amount</label>
-                <input type="number" name="amount" placeholder='Amount' value={expense.amount} onChange={handleChange} />
-                <label htmlFor="category">Category</label>
-                <input type="text" name="category" placeholder='Category' value={expense.category} onChange={handleChange} />
-                <label htmlFor="date">Date</label>
-                <input type="date" name="date" placeholder='Date' value={expense.date} onChange={handleChange} />
-            </form>
+            <Show when="signed-in">
 
-            <button onClick={handleSubmit} type='submit' className="button">Add Expense</button>
-                </Show>
+                <form onSubmit={handleSubmit}>
+                    <label htmlFor="title">Title</label>
+                    <input type="text" name="title" placeholder='Title' value={expense.title} onChange={handleChange} />
+                    <label htmlFor="amount">Amount</label>
+                    <input type="number" name="amount" placeholder='Amount' value={expense.amount} onChange={handleChange} />
+                    <label htmlFor="category">Category</label>
+                    <input type="text" name="category" placeholder='Category' value={expense.category} onChange={handleChange} />
+                    {/* <label htmlFor="createdAt">Date</label>
+                    <input type="createdAt" name="createdAt" placeholder='Date' value={expense.createdAt} onChange={handleChange} /> */}
+                </form>
+
+                <button onClick={handleSubmit} type='submit' className="button">Add Expense</button>
+            </Show>
 
         </div>
     )

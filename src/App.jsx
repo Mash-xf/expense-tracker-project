@@ -3,6 +3,7 @@ import './App.css'
 import { ClerkProvider } from '@clerk/react'
 import { BrowserRouter, Routes, Route } from 'react-router'
 import Header from './components/Header'
+import { useNavigate } from "react-router";
 
 import header from './components/Header'
 import ExpensesForm from './components/ExpensesForm'
@@ -14,8 +15,8 @@ import Login from './components/Login'
 function App() {
 
 
-  const PUBLISHABLE_KEY = `pk_live_Y2xlcmsubWFzaC14Zi5naXRodWIuaW8k`
-  // const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
+  // const PUBLISHABLE_KEY = `pk_live_Y2xlcmsubWFzaC14Zi5naXRodWIuaW8k`
+  const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 
   if (!PUBLISHABLE_KEY) {
     throw new Error('Add your Clerk Publishable Key to the .env file')
@@ -24,14 +25,17 @@ function App() {
   const [expenses, setExpenses] = useState([]);
   const [income, setIncome] = useState([]);
 
+  // const navigate = useNavigate();
+  // navigate('/');
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const expensesResponse = await fetch('http://localhost:3500/expenses');
+        const expensesResponse = await fetch('https://6a08073efa9b27c848fa8a5f.mockapi.io/api/et/expenses');
+        // const expensesResponse = await fetch('http://localhost:3500/expenses');
         const expensesData = await expensesResponse.json();
         setExpenses(expensesData);
 
-        const incomeResponse = await fetch('http://localhost:3500/income');
+        const incomeResponse = await fetch('https://6a08073efa9b27c848fa8a5f.mockapi.io/api/et/incomes');
         const incomeData = await incomeResponse.json();
         setIncome(incomeData);
       } catch (error) {
