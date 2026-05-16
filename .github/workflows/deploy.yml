@@ -24,20 +24,20 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build project
-        run: npm run build
-                
         env:
           VITE_CLERK_PUBLISHABLE_KEY: ${{ vars.VITE_CLERK_PUBLISHABLE_KEY }}
           # VITE_CLERK_PUBLISHABLE_KEY: ${{ secrets.VITE_CLERK_PUBLISHABLE_KEY }}
+      - name: Build project
+        run: npm run build
+                
 
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
-          
+          # publish_dir: ./
+          publish_dir: ./dist          
 
 
 
