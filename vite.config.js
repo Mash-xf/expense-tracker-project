@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [
     react(),
   ],
-   base: '/expense-tracker-project/',
+  base: '/expense-tracker-project/',
   test: {
     environment: 'jsdom',
     globals: true,

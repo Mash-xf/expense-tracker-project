@@ -59,10 +59,10 @@ a {
   padding: 32px 18px;
 }
 
-#root > div,
-#root > main,
-#root > header,
-#root > * {
+#root>div,
+#root>main,
+#root>header,
+#root>* {
   width: min(100%, 980px);
 }
 
@@ -130,6 +130,7 @@ a {
   width: min(100%, 980px);
   margin: 0 auto;
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -153,49 +154,78 @@ a {
 .income-list,
 .expense-list {
   width: min(100%, 760px);
+  width: 100%;
   display: grid;
   gap: 14px;
   justify-items: center;
 }
 
-.income-list > p,
-.expense-list > p {
-  width: 100%;
-  padding: 16px;
+
+.total {
+  width: fit-content;
+  padding: 30px;
   color: var(--white);
   background: var(--purple);
   border-radius: 8px;
   font-size: 1.05rem;
   font-weight: 800;
   box-shadow: var(--shadow);
+  margin-left: auto;
 }
 
 .income-item,
 .expense-item {
   width: 100%;
-  padding: 20px;
-  display: grid;
+  padding: 12px;
   gap: 8px;
-  justify-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   overflow-wrap: anywhere;
   background: rgba(255, 255, 255, 0.92);
   border: 1px solid var(--beige-dark);
   border-left: 6px solid var(--purple);
   border-radius: 8px;
   box-shadow: var(--shadow);
+
+
+
+
+  .expense-category {
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .income-date,
+  .expense-date {
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 0.9rem;
+    font-style: italic;
+    padding-left: 10px;
+  }
+
+  .income-amount,
+  .expense-amount {
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: auto;
+  }
+
+  h3,
+  h3 {
+    color: var(--purple-dark);
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+  }
+
 }
 
-.income-item h3,
-.expense-item h3 {
-  color: var(--purple-dark);
-  font-size: clamp(1.1rem, 3vw, 1.4rem);
-}
-
-.income-item p,
-.expense-item p {
-  color: var(--muted);
-  line-height: 1.5;
-}
 
 .expense-form,
 .income-form {
@@ -245,7 +275,8 @@ a {
 .button,
 .expense-form button,
 .income-form button {
-  width: 100%;
+  /* width: 100%; */
+  /* width: fit-content; */
   min-height: 48px;
   padding: 12px 18px;
   color: var(--white);
@@ -279,7 +310,7 @@ a {
   }
 
   .nav a {
-    flex: 1 1 130px;
+    flex: 1 1 30px;
     padding-inline: 10px;
   }
 

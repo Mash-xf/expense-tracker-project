@@ -16,8 +16,8 @@ const Home = (
 
     <div className='home'>
       <Show when="signed-in">
-        <IncomeList incomes={income} />
-        <ExpenseList expenses={expenses} />
+        <IncomeList incomes={income} expenses={expenses} />
+        <ExpenseList incomes={income} expenses={expenses} />
       </Show>
       <Show when="signed-out">
 
