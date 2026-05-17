@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import { ClerkProvider } from '@clerk/react'
-import { BrowserRouter, Routes, Route } from 'react-router'
+import { BrowserRouter, Routes, Route , HashRouter} from 'react-router'
 import Header from './components/Header'
 import { useNavigate } from "react-router";
 
@@ -49,7 +49,7 @@ function App() {
 
   return (
     <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignInUrl="/" afterSignOutUrl="/">
-      <BrowserRouter basename="/expense-tracker-project">
+      <HashRouter>
         <Header />
         <Routes>
           <Route path="/" element={<Home
@@ -71,7 +71,7 @@ function App() {
             income={income}
             setIncome={setIncome} />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </ClerkProvider>
   )
 }
