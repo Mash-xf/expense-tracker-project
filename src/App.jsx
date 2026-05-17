@@ -48,7 +48,7 @@ function App() {
 
 
   return (
-    <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
+    <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/expense-tracker-project" afterSignInUrl="/expense-tracker-project">
       <BrowserRouter basename="/expense-tracker-project">
         <Header />
         <Routes>
@@ -56,7 +56,7 @@ function App() {
             expenses={expenses}
             setExpenses={setExpenses}
             income={income}
-            setIncome={setIncome}
+            setIncome={setIncome} 
           />} />
           <Route path="/add-expense" element={<ExpensesForm expenses={expenses}
             setExpenses={setExpenses}
