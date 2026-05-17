@@ -11,7 +11,7 @@ import IncomeForm from './components/IncomeForm'
 import Home from './components/Home'
 import Login from './components/Login'
 
-const isProduction = process.env.PROD
+const isProduction = true;
 function App() {
 
 
