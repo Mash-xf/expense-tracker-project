@@ -77,8 +77,8 @@ function ExpensesForm({ expenses,
                     <input type="number" name="amount" placeholder='Amount' value={expense.amount} onChange={handleChange} />
                     <label htmlFor="category">Category</label>
                     <input type="text" name="category" placeholder='Category' value={expense.category} onChange={handleChange} />
-                    {/* <label htmlFor="createdAt">Date</label>
-                    <input type="createdAt" name="createdAt" placeholder='Date' value={expense.createdAt} onChange={handleChange} /> */}
+                    <label htmlFor="createdAt">Date</label>
+                    <input type="date" name="createdAt" placeholder='Date' value={expense.createdAt} onChange={handleChange} /> 
                 </form>
 
                 <button onClick={handleSubmit} type='submit' className="button">Add Expense</button>
