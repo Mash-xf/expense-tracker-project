@@ -6,10 +6,10 @@ const Login = () => {
   return (
     <div>
       <h1>Login</h1>
-      <p>Please sign in to access your expense tracker.</p> 
+      <p>Please sign in to access your expense tracker.</p>
 
-<SignUp/>
-      
+      <SignUp routing="hash" />
+
     </div>
   )
 }
