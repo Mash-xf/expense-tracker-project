@@ -23,6 +23,7 @@ function App() {
   }
 
   const [expenses, setExpenses] = useState([]);
+  const [income, setIncome] = useState([]);
 
   // const navigate = useNavigate();
   // navigate('/');
