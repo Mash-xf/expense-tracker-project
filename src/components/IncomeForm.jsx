@@ -63,7 +63,7 @@ function IncomeForm({ expenses,
     return (
         <div className='income-form'>
             <Show when="signed-in">
-
+                {/* form */}
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="title">Title</label>
                     <input type="text" name="title" placeholder='Title' value={income.title} onChange={handleChange} />
