@@ -49,7 +49,7 @@ function App() {
 
   return (
     <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
-      <BrowserRouter>
+      <BrowserRouter basename="/expense-tracker-project">
         <Header />
         <Routes>
           <Route path="/" element={<Home
