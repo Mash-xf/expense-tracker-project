@@ -48,7 +48,7 @@ function App() {
 
 
   return (
-    <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/expense-tracker-project" afterSignInUrl="/expense-tracker-project" afterSignUpUrl="/expense-tracker-project">
+    <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/expense-tracker-project" afterSignInUrl="/https://mash-xf.github.io/expense-tracker-project/" afterSignUpUrl="/https://mash-xf.github.io/expense-tracker-project/">
       <BrowserRouter basename="/expense-tracker-project">
         <Header />
         <Routes>
