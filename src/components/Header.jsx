@@ -1,12 +1,20 @@
-import { Show, SignIn, SignInButton, UserButton } from '@clerk/react';
-import react from 'react'
+import { Show, UserButton } from '@clerk/react';
 import { NavLink } from "react-router";
 
 function Header() {
     return (
         <header className='header'>
-            <h1>Expense Tracker</h1>
-            <span className='tagline'>Track your expenses and income</span>
+            <div className="brand">
+                <img
+                    src={`${import.meta.env.BASE_URL}expense-tracker-logo.png`}
+                    alt="Expense Tracker logo"
+                    className="brand-logo"
+                />
+                <div className="brand-text">
+                    <h1>Expense Tracker</h1>
+                    <span className='tagline'>Track your expenses and income</span>
+                </div>
+            </div>
             <nav className='nav'>
                 <NavLink to="/">Home</NavLink>
 

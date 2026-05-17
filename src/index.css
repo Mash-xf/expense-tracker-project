@@ -72,13 +72,33 @@ a {
   padding: 28px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   gap: 12px;
-  text-align: center;
   background: rgba(255, 255, 255, 0.86);
   border: 1px solid var(--beige-dark);
   border-radius: 8px;
   box-shadow: var(--shadow);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  text-align: left;
+}
+
+.brand-logo {
+  width: clamp(58px, 12vw, 96px);
+  aspect-ratio: 1;
+  flex: 0 0 auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 10px 24px rgba(67, 39, 102, 0.16);
+}
+
+.brand-text {
+  min-width: 0;
 }
 
 .header h1 {
@@ -303,6 +323,11 @@ a {
   .expense-form,
   .income-form {
     padding: 20px 14px;
+  }
+
+  .brand {
+    justify-content: center;
+    text-align: center;
   }
 
   .nav {
