@@ -16,7 +16,7 @@ function App() {
 
 
   // const PUBLISHABLE_KEY = `pk_live_Y2xlcmsubWFzaC14Zi5naXRodWIuaW8k`
-  const PUBLISHABLE_KEY = isProduction ? process.env.VITE_CLERK_PUBLISHABLE_KEY : import.meta.env.VITE_CLERK_PUBLISHABLE_KEY 
+  const PUBLISHABLE_KEY = process.env.VITE_CLERK_PUBLISHABLE_KEY || import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
   if (!PUBLISHABLE_KEY) {
     throw new Error('Add your Clerk Publishable Key to the .env file')
