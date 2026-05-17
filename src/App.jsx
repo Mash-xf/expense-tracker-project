@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import { ClerkProvider } from '@clerk/react'
-// Note: Changed 'react-router' to 'react-router-dom' which is standard for web apps
 import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom'
 import Header from './components/Header'
 
@@ -16,11 +15,12 @@ function AppContent({ expenses, setExpenses, income, setIncome }) {
 
   return (
 
-    <ClerkProvider 
-      publishableKey="pk_test_YWRhcHRpbmctaGFnZmlzaC00Ny5jbGVyay5hY2NvdW50cy5kZXYk" 
+    <ClerkProvider
+      publishableKey="pk_test_YWRhcHRpbmctaGFnZmlzaC00Ny5jbGVyay5hY2NvdW50cy5kZXYk"
       routerPush={(to) => navigate(to)}
       routerReplace={(to) => navigate(to, { replace: true })}
-      afterSignInUrl="/expense-tracker-project/" 
+      signInUrl="/expense-tracker-project/"
+      afterSignInUrl="/expense-tracker-project/"
       afterSignOutUrl="/expense-tracker-project/"
     >
       <Header />
@@ -29,7 +29,7 @@ function AppContent({ expenses, setExpenses, income, setIncome }) {
           expenses={expenses}
           setExpenses={setExpenses}
           income={income}
-          setIncome={setIncome} 
+          setIncome={setIncome}
         />} />
         <Route path="/add-expense" element={<ExpensesForm expenses={expenses}
           setExpenses={setExpenses}
@@ -72,11 +72,11 @@ function App() {
 
   return (
     <BrowserRouter basename="/expense-tracker-project">
-      <AppContent 
-        expenses={expenses} 
-        setExpenses={setExpenses} 
-        income={income} 
-        setIncome={setIncome} 
+      <AppContent
+        expenses={expenses}
+        setExpenses={setExpenses}
+        income={income}
+        setIncome={setIncome}
       />
     </BrowserRouter>
   )
